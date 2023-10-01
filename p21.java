@@ -1,11 +1,14 @@
+import java.util.*;
+
 public class p21 {
     public static void main(String[] args) {
-        Degree d = new Degree();
-        Undergraduate u = new Undergraduate();
-        Postgraduate p = new Postgraduate();
-        d.getDegree();
-        u.getDegree();
-        p.getDegree();
+        Degree D = new Degree();
+        Undergraduate U = new Undergraduate();
+        Postgraduate P = new Postgraduate();
+
+        P.getDegree();
+        U.getDegree();
+        System.out.println("Id-22DCE069");
     }
 }
 
@@ -17,6 +20,8 @@ class Degree {
 
 class Undergraduate extends Degree {
     void getDegree() {
+        super.getDegree();
+
         System.out.println("I am an Undergraduate");
     }
 }

@@ -1,33 +1,38 @@
-import java.util.*;
+class CustomCheckedException extends Exception {
+    public CustomCheckedException(String message) {
+        super(message);
+    }
+}
 
-public class p26{
-    int createExp() throws ArithmeticException{
-        int x  = 10/0;
-        return x;
+class CustomUncheckedException extends RuntimeException {
+    public CustomUncheckedException(String message) {
+        super(message);
+    }
+}
+
+public class p26 {
+
+    public static void throwCheckedException() throws CustomCheckedException {
+        throw new CustomCheckedException("This is a checked exception.");
     }
 
-    public void checkAge(int age){
-        if(age<18)
-            throw new ArithmeticException("Not Eligible for voting");
-
-        else
-            System.out.println("Eligible for voting");
+    public static void throwUncheckedException() {
+        throw new CustomUncheckedException("This is an unchecked exception.");
     }
 
     public static void main(String[] args) {
-       p26 obj = new p26();
-       //for throws
-        try{
-            obj.createExp();
+        try {
+
+            throwCheckedException();
+        } catch (CustomCheckedException e) {
+            System.out.println("Caught checked exception: " + e.getMessage());
         }
-        catch(ArithmeticException e){
-            System.out.println("An error has occoured");
-            e.printStackTrace();
+        try {
+            throwUncheckedException();
+        } catch (CustomUncheckedException e) {
+            System.out.println("Caught unchecked exception: " + e.getMessage());
+        } finally {
+            System.out.println("Id-22DCE069");
         }
-        int age;
-        Scanner sc = new Scanner (System.in);
-        System.out.print("Enter age: ");
-        age=sc.nextInt();
-        obj.checkAge(age);//for throw
-    } 
+    }
 }

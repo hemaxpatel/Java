@@ -1,34 +1,35 @@
+import java.util.*;
+
 public class p20 {
     public static void main(String[] args) {
-        Square s = new Square();
-        s.print();
+        Square S = new Square();
+        S.Display();
+        System.out.println("Id-22DCE069");
     }
 }
-
 class Shape {
-    void print() {
-        System.out.println("This is Shape This is Shape");
+    void Display() {
+        System.out.println("This is Shape");
     }
 }
 
 class Rectangle extends Shape {
-    void print() {
-        super.print();
-        System.out.println("This is Rectangular Shape");
+    void Display() {
+        super.Display();
+        System.out.println("This is rectangular shape");
     }
 }
 
 class Circle extends Shape {
-    void print() {
-        System.out.println("This is Circular Shape");
+    void Display() {
+        System.out.println("This is circular shape");
     }
 }
 
-class Square extends Rectangle
-{
-    void print()
-    {
-        super.print();
-        System.out.println("Square is a Rectangle");
+class Square extends Rectangle {
+    void Display() {
+        super.Display();
+        System.out.println("Square is a rectangle");
     }
+
 }
